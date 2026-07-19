@@ -6,7 +6,7 @@ import { CTA } from '@/components/sections/CTA'
 import { FAQ } from '@/components/sections/FAQ'
 import { FeatureCard } from '@/components/sections/FeatureCard'
 import { Hero } from '@/components/sections/Hero'
-import { ResponsibilitySplit } from '@/components/sections/ResponsibilitySplit'
+import { OperationsGrid } from '@/components/sections/OperationsGrid'
 import { TalentCategoryGrid } from '@/components/sections/TalentCategoryGrid'
 import { Timeline } from '@/components/sections/Timeline'
 import { Seo } from '@/components/ui/Seo'
@@ -190,28 +190,18 @@ export function HomePage() {
 
         <Section>
           <div className="mb-8 max-w-4xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+              Team operations
+            </p>
             <h2 className="mt-3 font-display text-4xl font-semibold text-white sm:text-5xl">
-              You manage the work. We manage everything else.
+              We run the operations behind your remote team
             </h2>
+            <p className="mt-4 text-lg text-slate-300">
+              While your engineering team focuses on building great products,
+              Hispanicoders manages the operational side of your remote workforce.
+            </p>
           </div>
-          <ResponsibilitySplit
-            leftTitle="You lead"
-            leftItems={[
-              'Product direction',
-              'Technical decisions',
-              'Priorities and workflows',
-              'Daily team management',
-            ]}
-            rightTitle="We handle"
-            rightItems={[
-              'Talent sourcing',
-              'Candidate screening',
-              'Contracts',
-              'Payments',
-              'Administrative support',
-              'Ongoing relationship management',
-            ]}
-          />
+          <OperationsGrid />
         </Section>
 
         <Section>
