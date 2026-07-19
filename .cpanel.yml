@@ -1,10 +1,9 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH="$HOME/public_html"
-    - /bin/mkdir -p "$DEPLOYPATH"
-    - /bin/mkdir -p "$DEPLOYPATH/api"
-    - /bin/rm -rf "$DEPLOYPATH/assets"
-    - /bin/cp -R dist/* "$DEPLOYPATH"
-    - /bin/cp -R api/* "$DEPLOYPATH/api"
-    - /bin/cp public/.htaccess "$DEPLOYPATH/.htaccess"
+    - /bin/mkdir -p $HOME/public_html
+    - /bin/mkdir -p $HOME/public_html/api
+    - /bin/rm -rf $HOME/public_html/assets
+    - /bin/cp -R dist/* $HOME/public_html/
+    - /bin/cp -R api/* $HOME/public_html/api/
+    - /bin/cp public/.htaccess $HOME/public_html/.htaccess
