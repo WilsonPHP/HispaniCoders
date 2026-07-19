@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH="$HOME/public_html"
+    - /bin/mkdir -p "$DEPLOYPATH"
+    - /bin/mkdir -p "$DEPLOYPATH/api"
+    - /bin/rm -rf "$DEPLOYPATH/assets"
+    - /bin/cp -R dist/* "$DEPLOYPATH"
+    - /bin/cp -R api/* "$DEPLOYPATH/api"
+    - /bin/cp public/.htaccess "$DEPLOYPATH/.htaccess"
