@@ -59,6 +59,8 @@ final class SmtpMailer
                 'From: ' . $this->formatAddress($fromEmail, $fromName),
                 'To: ' . $this->formatAddress($toEmail, 'HispaniCoders Contact'),
                 'Subject: ' . $this->encodeHeader($subject),
+                'Date: ' . gmdate('D, d M Y H:i:s') . ' +0000',
+                'Message-ID: <' . bin2hex(random_bytes(12)) . '@hispanicoders.com>',
                 'MIME-Version: 1.0',
                 'Content-Type: multipart/alternative; boundary="' . $boundary . '"',
             ];
@@ -136,6 +138,7 @@ final class SmtpMailer
 
     private function normalizeBody(string $body): string
     {
-        return str_replace(["\r\n", "\r"], "\n", trim($body));
+        $normalized = str_replace(["\r\n", "\r"], "\n", trim($body));
+        return str_replace("\n", "\r\n", $normalized);
     }
 }

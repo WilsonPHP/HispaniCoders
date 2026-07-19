@@ -172,9 +172,6 @@ export function ContactPage() {
                 <Button type="submit" disabled={!isFormValid || isSubmitting}>
                   {isSubmitting ? 'Sending...' : 'Request Talent'}
                 </Button>
-                <Button to="/contact" variant="secondary">
-                  Schedule a Call
-                </Button>
               </div>
             </form>
           </Card>

@@ -98,6 +98,15 @@ try {
         $fullName
     );
 } catch (Throwable $exception) {
+    error_log(
+        sprintf(
+            '[HispaniCoders][contact] SMTP error: %s | from=%s | company=%s',
+            $exception->getMessage(),
+            $workEmail,
+            $company
+        )
+    );
+
     http_response_code(500);
     echo json_encode([
         'ok' => false,

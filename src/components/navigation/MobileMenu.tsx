@@ -37,7 +37,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         onClick={onClose}
         className="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-accent px-4 py-2 font-semibold text-slate-900"
       >
-        Schedule a Call
+        Contact
       </Link>
     </div>
   )

@@ -33,6 +33,16 @@ async function postJson<TPayload>(endpoint: string, payload: TPayload) {
     throw new Error(errorMessage)
   }
 
+  const isValidSuccessResponse =
+    typeof responseBody === 'object' &&
+    responseBody !== null &&
+    'ok' in responseBody &&
+    responseBody.ok === true
+
+  if (!isValidSuccessResponse) {
+    throw new Error('Invalid API response. Please verify the PHP endpoint is running.')
+  }
+
   return responseBody
 }
 

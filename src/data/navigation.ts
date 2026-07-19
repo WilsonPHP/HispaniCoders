@@ -11,5 +11,4 @@ export const navigationItems: NavigationItem[] = [
   { label: 'Why LATAM', href: '/why-latam' },
   { label: 'About', href: '/about' },
   { label: 'Resources', href: '/resources' },
-  { label: 'Contact', href: '/contact' },
 ]
