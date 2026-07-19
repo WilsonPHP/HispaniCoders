@@ -22,11 +22,18 @@ async function postJson<TPayload>(endpoint: string, payload: TPayload) {
     body: JSON.stringify(payload),
   })
 
+  const responseBody = await response.json().catch(() => ({}))
+
   if (!response.ok) {
-    throw new Error(`Request failed with status ${response.status}`)
+    const errorMessage =
+      typeof responseBody.message === 'string' && responseBody.message.trim() !== ''
+        ? responseBody.message
+        : `Request failed with status ${response.status}`
+
+    throw new Error(errorMessage)
   }
 
-  return response.json().catch(() => ({}))
+  return responseBody
 }
 
 export function submitContact(payload: ContactPayload) {
