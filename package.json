@@ -7,6 +7,8 @@
     "dev": "vite",
     "typecheck": "tsc --noEmit",
     "build": "vite build",
+    "postbuild": "node scripts/generate-sitemap.mjs",
+    "sitemap": "node scripts/generate-sitemap.mjs",
     "lint": "oxlint src api",
     "preview": "vite preview"
   },
