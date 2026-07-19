@@ -6,7 +6,7 @@ import { Card } from '@/components/ui/Card'
 import { PageHeader } from '@/components/sections/PageHeader'
 import { Seo } from '@/components/ui/Seo'
 import { submitContact } from '@/services/api'
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 
 type ContactFormState = {
   fullName: string
@@ -54,8 +54,6 @@ export function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-
-  const isFormValid = useMemo(() => Object.keys(validate(values)).length === 0, [values])
 
   function updateField<Key extends keyof ContactFormState>(field: Key, value: ContactFormState[Key]) {
     setValues((current) => ({ ...current, [field]: value }))
@@ -169,7 +167,7 @@ export function ContactPage() {
               ) : null}
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <Button type="submit" disabled={!isFormValid || isSubmitting}>
+                <Button type="submit" disabled={isSubmitting}>
                   {isSubmitting ? 'Sending...' : 'Request Talent'}
                 </Button>
               </div>

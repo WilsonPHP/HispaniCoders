@@ -5,6 +5,7 @@ import { HomePage } from '@/pages/HomePage'
 import { HowItWorksPage } from '@/pages/HowItWorksPage'
 import { IndustriesPage } from '@/pages/IndustriesPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
+import { ResourcePostPage } from '@/pages/ResourcePostPage'
 import { ResourcesPage } from '@/pages/ResourcesPage'
 import { StaffAugmentationPage } from '@/pages/StaffAugmentationPage'
 import { TalentPage } from '@/pages/TalentPage'
@@ -23,6 +24,7 @@ export default function App() {
         <Route element={<WhyLatamPage />} path="why-latam" />
         <Route element={<AboutPage />} path="about" />
         <Route element={<ResourcesPage />} path="resources" />
+        <Route element={<ResourcePostPage />} path="resources/:slug" />
         <Route element={<ContactPage />} path="contact" />
         <Route element={<NotFoundPage />} path="*" />
       </Route>
