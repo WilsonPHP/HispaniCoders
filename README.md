@@ -81,5 +81,12 @@ Proxima fase:
 npm run build
 ```
 
-2. Subir contenido de dist/ al hosting.
-3. Mantener carpeta api/ en el servidor para procesar formularios PHP.
+2. Subir el contenido interno de dist/ a public_html.
+3. Subir tambien la carpeta api/ dentro de public_html para los endpoints PHP.
+4. Verificar que exista public_html/.htaccess (sale automaticamente desde public/.htaccess en el build).
+
+Importante:
+
+- No subir el codigo fuente de src/ como sitio publico.
+- El index.html publico debe ser el generado por dist/, no el index.html raiz del repo.
+- Si se publica el index del repo, el navegador intenta cargar /src/main.tsx y genera error MIME.

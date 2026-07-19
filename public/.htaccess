@@ -1,0 +1,29 @@
+Options -MultiViews
+
+<IfModule mod_mime.c>
+    AddType text/javascript .js .mjs
+    AddType text/css .css
+    AddType application/json .json
+    AddType image/svg+xml .svg .svgz
+    AddType application/wasm .wasm
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(js|mjs|css|json|svg|wasm)$">
+        Header set X-Content-Type-Options "nosniff"
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    RewriteRule ^api/ - [L]
+    RewriteRule ^assets/ - [L]
+
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    RewriteRule . /index.html [L]
+</IfModule>
