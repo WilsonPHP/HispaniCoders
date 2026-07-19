@@ -12,8 +12,12 @@ export function Hero() {
         Helping US companies build world-class engineering teams with top LATAM talent.
       </h1>
       <p className="mt-6 max-w-2xl text-lg text-slate-300">
-        We handle recruiting, technical vetting, hiring, contracts, payments, and
-        administration so your internal leaders can focus only on delivery.
+        We help US companies add experienced technology professionals from Latin America
+        directly into their internal teams.
+      </p>
+      <p className="mt-4 max-w-2xl text-base text-slate-300">
+        HispaniCoders manages recruiting, contracts, payments, and administrative support,
+        while your team keeps full control over product direction and technical decisions.
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
         <Button to="/contact">Request Talent</Button>
