@@ -36,11 +36,26 @@ const faqs = [
 ]
 
 const benefits = [
-  'US-aligned working hours',
-  'Experienced LATAM professionals',
-  'Human-led candidate selection',
-  'Flexible engagements',
-  'Ongoing administrative support',
+  {
+    title: 'US time overlap',
+    description: 'Daily collaboration windows that fit your team rituals and delivery cadence.',
+  },
+  {
+    title: 'Senior LATAM talent',
+    description: 'Experienced professionals across engineering, DevOps, QA, data, and product.',
+  },
+  {
+    title: 'Curated matching',
+    description: 'Human-led candidate selection aligned to your exact role and context.',
+  },
+  {
+    title: 'Flexible ramp-up',
+    description: 'Start with one strategic role and scale capacity as roadmap demands grow.',
+  },
+  {
+    title: 'Operational reliability',
+    description: 'Contracts, payments, and ongoing admin support handled end-to-end.',
+  },
 ]
 
 const talentCategories = [
