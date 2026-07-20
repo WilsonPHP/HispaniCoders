@@ -12,9 +12,11 @@ export function Navbar() {
     <header className="sticky top-0 z-40 border-b border-white/10 bg-slateDeep/75 backdrop-blur-xl">
       <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
         <Link to="/" className="inline-flex items-center gap-3 text-white">
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-accent font-display text-sm font-bold text-slate-950">
-            HC
-          </span>
+          <img
+            src="/logo.png"
+            alt="HispaniCoders logo"
+            className="h-10 w-10 object-contain"
+          />
           <span className="font-display text-lg font-semibold tracking-tight">HispaniCoders</span>
         </Link>
 
