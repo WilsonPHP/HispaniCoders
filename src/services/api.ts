@@ -3,6 +3,7 @@ export type ContactPayload = {
   workEmail: string
   company: string
   message: string
+  website?: string
 }
 
 export type TalentRequestPayload = {

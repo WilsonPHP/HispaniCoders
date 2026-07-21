@@ -31,6 +31,16 @@ $fullName = trim((string)($payload['fullName'] ?? ''));
 $workEmail = trim((string)($payload['workEmail'] ?? ''));
 $company = trim((string)($payload['company'] ?? ''));
 $message = trim((string)($payload['message'] ?? ''));
+$website = trim((string)($payload['website'] ?? ''));
+
+if ($website !== '') {
+    // Honeypot hit: acknowledge without sending email to quietly drop bots.
+    echo json_encode([
+        'ok' => true,
+        'message' => 'Thank you. Your request was sent successfully.',
+    ]);
+    exit;
+}
 
 if ($fullName === '' || $workEmail === '' || $company === '' || $message === '') {
     http_response_code(422);

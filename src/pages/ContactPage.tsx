@@ -13,6 +13,7 @@ type ContactFormState = {
   workEmail: string
   company: string
   message: string
+  website: string
 }
 
 type ContactFormErrors = Partial<Record<keyof ContactFormState, string>>
@@ -22,6 +23,7 @@ const initialFormState: ContactFormState = {
   workEmail: '',
   company: '',
   message: '',
+  website: '',
 }
 
 function validate(values: ContactFormState): ContactFormErrors {
@@ -115,6 +117,19 @@ export function ContactPage() {
         <Section>
           <Card className="max-w-3xl">
             <form className="grid gap-4" noValidate onSubmit={handleSubmit}>
+              <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+                <label htmlFor="website">Website</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={values.website}
+                  onChange={(event) => updateField('website', event.target.value)}
+                />
+              </div>
+
               <FormField
                 id="fullName"
                 label="Full Name"
