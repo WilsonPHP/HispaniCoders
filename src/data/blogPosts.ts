@@ -18,6 +18,104 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'hire-latam-developers-us-startups',
+    title: 'Hire LATAM Developers for US Startups: Cost, Timeline, and Quality Framework',
+    excerpt:
+      'A decision framework for US startups comparing speed, quality, and cost across LATAM hiring channels.',
+    description:
+      'How US startups hire LATAM developers with a practical model for role fit, interview speed, and delivery reliability.',
+    category: 'Hiring Strategy',
+    readTime: '9 min read',
+    publishedAt: 'July 2026',
+    intro:
+      'US startups need engineering velocity, but rushed hiring creates expensive setbacks. This framework helps founders and engineering leaders evaluate LATAM hiring through three priorities: timeline, quality of hire, and execution impact in the first 90 days.',
+    takeaways: [
+      'Compare channels using time-to-impact, not just salary expectations',
+      'Role scorecards and fast debrief loops improve both speed and quality',
+      'Communication fit in English is a core hiring signal for distributed teams',
+      'Operational readiness after offer acceptance is critical for early momentum',
+    ],
+    sections: [
+      {
+        title: 'Why startup hiring decisions fail when cost is the only filter',
+        paragraphs: [
+          'Cost matters, but focusing only on hourly rates often leads to weak selection criteria and delayed delivery. The hidden costs of misalignment include rework, missed sprint goals, and leadership distraction.',
+          'A stronger approach is to evaluate expected business impact: how quickly the candidate can contribute, communicate, and own production outcomes.',
+        ],
+      },
+      {
+        title: 'Timeline framework: from role definition to onboarding',
+        paragraphs: [
+          'Break hiring into measurable stages: role discovery, candidate curation, interview loop, decision, and onboarding. Define a target duration for each stage before sourcing starts.',
+          'Startups that keep debrief windows under 48 hours and assign a final decision owner usually reduce hiring delays without lowering standards.',
+        ],
+      },
+      {
+        title: 'Quality framework: evaluate technical depth and ownership',
+        paragraphs: [
+          'Use practical validation: architecture walkthroughs, debugging scenarios, and role-specific coding exercises. Prioritize reasoning clarity, tradeoff decisions, and production reliability over trivia.',
+          'For distributed teams, communication quality in English should be assessed in real collaboration scenarios, not only conversational interviews.',
+        ],
+      },
+      {
+        title: 'Operating model: protect delivery after the hire',
+        paragraphs: [
+          'The hiring decision is only the midpoint. Early performance depends on onboarding structure, ownership boundaries, and communication cadence with your US team.',
+          'Use a 30-60-90 day plan with explicit outcomes, stakeholder mapping, and first-sprint priorities to accelerate time-to-impact.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'staff-augmentation-vs-freelance-marketplaces',
+    title: 'Staff Augmentation vs Freelance Marketplaces: What US Engineering Leaders Should Choose',
+    excerpt:
+      'A practical comparison of hiring models for US teams that need speed, accountability, and technical consistency.',
+    description:
+      'Compare staff augmentation and freelance marketplaces across speed, ownership, quality control, and operational risk.',
+    category: 'Team Operations',
+    readTime: '8 min read',
+    publishedAt: 'July 2026',
+    intro:
+      'Both staff augmentation and freelance marketplaces can fill engineering gaps, but they solve different problems. This guide helps US engineering leaders choose the model that matches their delivery complexity, collaboration needs, and growth stage.',
+    takeaways: [
+      'Freelance marketplaces can work for short, well-defined tasks',
+      'Staff augmentation is stronger for long-term product ownership and team continuity',
+      'Curated vetting reduces technical and communication risk in distributed teams',
+      'Operational support becomes a major advantage as teams scale beyond one hire',
+    ],
+    sections: [
+      {
+        title: 'Where freelance marketplaces perform well',
+        paragraphs: [
+          'Marketplaces are useful for highly scoped tasks with clear acceptance criteria, short durations, and minimal cross-functional dependency.',
+          'If your need is tactical and temporary, they can provide quick access to available contributors.',
+        ],
+      },
+      {
+        title: 'Where marketplaces create execution risk for core product work',
+        paragraphs: [
+          'Complex product development requires shared context, consistent standards, and predictable collaboration with internal teams. Marketplace workflows often shift that coordination burden to your managers.',
+          'Inconsistent vetting and fragmented accountability can increase rework, onboarding drag, and delivery volatility.',
+        ],
+      },
+      {
+        title: 'Why staff augmentation aligns better with engineering roadmaps',
+        paragraphs: [
+          'Staff augmentation is designed for embedded collaboration. Engineers work inside your tools, sprint rituals, and technical culture while your team keeps product ownership.',
+          'With role-aligned curation and structured operations, teams can protect quality while expanding capacity over multiple quarters.',
+        ],
+      },
+      {
+        title: 'Decision checklist for US engineering leaders',
+        paragraphs: [
+          'Use marketplaces when scope is narrow and handoff risk is low. Choose staff augmentation when you need sustained ownership, tighter team integration, and scalable hiring continuity.',
+          'The best model is the one that minimizes management overhead while maximizing dependable delivery over time.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'latam-vs-us-hiring-timeline',
     title: 'LATAM vs US Hiring Timeline: How Fast Can You Hire Senior Engineers?',
     excerpt:
