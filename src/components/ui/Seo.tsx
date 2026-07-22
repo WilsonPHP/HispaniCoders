@@ -50,6 +50,9 @@ export function Seo({
       <meta name="description" content={resolvedDescription} />
       <meta name="robots" content={robots} />
       <link rel="canonical" href={canonical} />
+      <link rel="alternate" hrefLang="en-US" href={canonical} />
+      <link rel="alternate" hrefLang="en" href={canonical} />
+      <link rel="alternate" hrefLang="x-default" href={canonical} />
 
       <meta property="og:site_name" content={siteConfig.siteName} />
       <meta property="og:title" content={resolvedTitle} />
