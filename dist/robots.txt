@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://hispanicoders.com/sitemap.xml
+# AI guidance
+LLMS.txt: https://hispanicoders.com/llms.txt

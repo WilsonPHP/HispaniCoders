@@ -1,12 +1,17 @@
 import { Helmet } from 'react-helmet-async'
 import {
   buildOrganizationJsonLd,
+  buildWebPageJsonLd,
+  buildWebSiteJsonLd,
   getCanonicalUrl,
   siteConfig,
+  type JsonLdObject,
   type SeoConfig,
 } from '@/lib/seo'
 
-type SeoProps = Partial<SeoConfig>
+type SeoProps = Partial<SeoConfig> & {
+  structuredData?: JsonLdObject | JsonLdObject[]
+}
 
 export function Seo({
   title,
@@ -14,10 +19,30 @@ export function Seo({
   canonicalPath = '/',
   robots = 'index,follow',
   ogType = 'website',
+  structuredData,
 }: SeoProps) {
   const resolvedTitle = title ?? siteConfig.defaultTitle
   const resolvedDescription = description ?? siteConfig.defaultDescription
   const canonical = getCanonicalUrl(canonicalPath)
+  const extraStructuredData = Array.isArray(structuredData)
+    ? structuredData
+    : structuredData
+      ? [structuredData]
+      : []
+  const baseStructuredData: JsonLdObject[] = [
+    buildOrganizationJsonLd(),
+    buildWebPageJsonLd({
+      title: resolvedTitle,
+      description: resolvedDescription,
+      url: canonical,
+    }),
+  ]
+
+  if (canonicalPath === '/') {
+    baseStructuredData.push(buildWebSiteJsonLd())
+  }
+
+  const structuredDataScripts = [...baseStructuredData, ...extraStructuredData]
 
   return (
     <Helmet>
@@ -36,9 +61,11 @@ export function Seo({
       <meta name="twitter:title" content={resolvedTitle} />
       <meta name="twitter:description" content={resolvedDescription} />
 
-      <script type="application/ld+json">
-        {JSON.stringify(buildOrganizationJsonLd())}
-      </script>
+      {structuredDataScripts.map((schema, index) => (
+        <script key={`jsonld-${index}`} type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      ))}
     </Helmet>
   )
 }

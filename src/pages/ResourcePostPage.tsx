@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
 import { Seo } from '@/components/ui/Seo'
 import { blogPosts, getBlogPostBySlug } from '@/data/blogPosts'
+import { buildArticleJsonLd, buildBreadcrumbJsonLd } from '@/lib/seo'
 import { Link, useParams } from 'react-router-dom'
 
 export function ResourcePostPage() {
@@ -37,13 +38,29 @@ export function ResourcePostPage() {
   }
 
   const relatedPosts = blogPosts.filter((candidate) => candidate.slug !== post.slug).slice(0, 2)
+  const postPath = `/resources/${post.slug}`
+  const publishedIsoDate = new Date(`${post.publishedAt} 01`).toISOString()
 
   return (
     <>
       <Seo
         title={`${post.title} | HispaniCoders`}
         description={post.description}
-        canonicalPath={`/resources/${post.slug}`}
+        canonicalPath={postPath}
+        ogType="article"
+        structuredData={[
+          buildBreadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'Resources', path: '/resources' },
+            { name: post.title, path: postPath },
+          ]),
+          buildArticleJsonLd({
+            title: post.title,
+            description: post.description,
+            path: postPath,
+            publishedDate: publishedIsoDate,
+          }),
+        ]}
       />
       <Container>
         <Section>

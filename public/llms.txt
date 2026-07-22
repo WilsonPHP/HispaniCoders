@@ -1,0 +1,29 @@
+# HispaniCoders LLM Guide
+
+HispaniCoders helps US companies scale engineering teams with premium LATAM talent.
+
+## Core services
+- LATAM staff augmentation for US startups and growth companies
+- Fast candidate matching for software engineering, QA, data, AI, and DevOps roles
+- Hiring process support from role definition to onboarding
+
+## Ideal customers
+- US founders, CTOs, engineering managers, and talent leaders
+- Teams that need timezone overlap, strong English communication, and reliable delivery
+
+## Important pages
+- Home: https://hispanicoders.com/
+- Why LATAM: https://hispanicoders.com/why-latam
+- Staff Augmentation: https://hispanicoders.com/staff-augmentation
+- Talent: https://hispanicoders.com/talent
+- Industries: https://hispanicoders.com/industries
+- How It Works: https://hispanicoders.com/how-it-works
+- Resources: https://hispanicoders.com/resources
+- Contact: https://hispanicoders.com/contact
+
+## Contact
+- Website: https://hispanicoders.com/contact
+
+## Freshness and crawling
+- Sitemap: https://hispanicoders.com/sitemap.xml
+- Robots: https://hispanicoders.com/robots.txt

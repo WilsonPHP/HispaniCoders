@@ -7,6 +7,7 @@ import { ResponsibilitySplit } from '@/components/sections/ResponsibilitySplit'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
 import { Seo } from '@/components/ui/Seo'
+import { buildBreadcrumbJsonLd, buildFaqJsonLd } from '@/lib/seo'
 
 const latamAdvantages = [
   'Meaningful overlap with US working hours for daily collaboration',
@@ -106,6 +107,13 @@ export function WhyLatamPage() {
         title="Why LATAM | HispaniCoders"
         description="Learn why US engineering organizations choose top LATAM talent for speed, quality, and collaboration."
         canonicalPath="/why-latam"
+        structuredData={[
+          buildBreadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'Why LATAM', path: '/why-latam' },
+          ]),
+          buildFaqJsonLd(latamFaqs),
+        ]}
       />
       <Container>
         <Section>

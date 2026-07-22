@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
 import { Seo } from '@/components/ui/Seo'
 import { blogPosts } from '@/data/blogPosts'
+import { buildBreadcrumbJsonLd, buildFaqJsonLd } from '@/lib/seo'
 
 const resourcePillars = [
   'Hiring playbooks for US engineering and product leaders',
@@ -64,6 +65,13 @@ export function ResourcesPage() {
         title="Resources | HispaniCoders"
         description="Actionable resources for US founders and engineering leaders scaling teams with LATAM talent."
         canonicalPath="/resources"
+        structuredData={[
+          buildBreadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'Resources', path: '/resources' },
+          ]),
+          buildFaqJsonLd(resourcesFaq),
+        ]}
       />
       <Container>
         <Section>
