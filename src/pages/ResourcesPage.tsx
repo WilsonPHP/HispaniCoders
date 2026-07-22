@@ -110,6 +110,9 @@ export function ResourcesPage() {
                 <Button to="/how-it-works" variant="secondary">
                   View Process
                 </Button>
+                <Button to="/hire-latam-developers" variant="secondary">
+                  Hire LATAM Developers
+                </Button>
               </div>
             </Card>
           </div>

@@ -232,6 +232,9 @@ export function StaffAugmentationPage() {
               <Button to="/contact" variant="secondary">
                 Contact
               </Button>
+              <Button to="/hire-latam-developers" variant="secondary">
+                Hiring timeline guide
+              </Button>
             </div>
           </Card>
         </Section>

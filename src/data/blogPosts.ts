@@ -18,6 +18,55 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'latam-vs-us-hiring-timeline',
+    title: 'LATAM vs US Hiring Timeline: How Fast Can You Hire Senior Engineers?',
+    excerpt:
+      'A practical comparison of hiring speed, interview bottlenecks, and onboarding risks across US-local and LATAM talent pipelines.',
+    description:
+      'Compare LATAM and US hiring timelines with a practical framework focused on speed, quality, and delivery impact.',
+    category: 'Hiring Strategy',
+    readTime: '8 min read',
+    publishedAt: 'July 2026',
+    intro:
+      'When engineering roadmap pressure increases, hiring speed becomes a business variable. This guide helps US teams compare local and LATAM hiring timelines without sacrificing technical quality.',
+    takeaways: [
+      'Hiring speed is constrained more by process design than by market size',
+      'Role clarity and fast feedback loops reduce delays in any geography',
+      'LATAM hiring can increase velocity when interview operations are disciplined',
+      'Onboarding quality is as important as time-to-hire for delivery impact',
+    ],
+    sections: [
+      {
+        title: 'Where US-local hiring timelines usually slow down',
+        paragraphs: [
+          'US hiring cycles often extend because teams compete for the same senior profiles, run fragmented interview loops, or take too long to align decision makers.',
+          'The result is not only higher hiring cost, but also roadmap delays that compound each sprint.',
+        ],
+      },
+      {
+        title: 'Why LATAM can improve hiring velocity for US teams',
+        paragraphs: [
+          'LATAM offers broad access to senior engineering talent with meaningful US time-zone overlap and strong communication standards.',
+          'With curated sourcing and role-specific vetting, many teams reduce interview friction and move faster from discovery to onboarding.',
+        ],
+      },
+      {
+        title: 'The timeline framework that protects speed and quality',
+        paragraphs: [
+          'Define outcomes first, then map interviews to those outcomes: technical depth, communication reliability, and ownership maturity. Keep debrief windows short and assign one final decision owner.',
+          'This model prevents false velocity, where fast decisions produce weak hires that later damage delivery.',
+        ],
+      },
+      {
+        title: 'How to choose the right path for your current roadmap',
+        paragraphs: [
+          'If your roadmap depends on immediate execution capacity, compare channels by expected interview-to-offer time and onboarding readiness, not salary alone.',
+          'Teams that treat hiring as an operations system, not a sequence of ad hoc interviews, consistently reduce time-to-impact.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'how-to-evaluate-latam-engineers',
     title: 'How to Evaluate LATAM Engineers',
     excerpt:
