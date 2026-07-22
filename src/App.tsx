@@ -10,6 +10,7 @@ import { NotFoundPage } from '@/pages/NotFoundPage'
 import { ResourcePostPage } from '@/pages/ResourcePostPage'
 import { ResourcesPage } from '@/pages/ResourcesPage'
 import { StaffAugmentationPage } from '@/pages/StaffAugmentationPage'
+import { StaffAugmentationVsInHousePage } from '@/pages/StaffAugmentationVsInHousePage'
 import { TalentPage } from '@/pages/TalentPage'
 import { WhyLatamPage } from '@/pages/WhyLatamPage'
 import { Route, Routes } from 'react-router-dom'
@@ -20,6 +21,7 @@ export default function App() {
       <Route element={<MainLayout />} path="/">
         <Route element={<HomePage />} index />
         <Route element={<StaffAugmentationPage />} path="staff-augmentation" />
+        <Route element={<StaffAugmentationVsInHousePage />} path="staff-augmentation-vs-in-house-hiring" />
         <Route element={<HireLatamDevelopersPage />} path="hire-latam-developers" />
         <Route element={<LatamVsApacPage />} path="latam-vs-apac" />
         <Route element={<TalentPage />} path="talent" />
