@@ -235,6 +235,9 @@ export function StaffAugmentationPage() {
               <Button to="/hire-latam-developers" variant="secondary">
                 Hiring timeline guide
               </Button>
+              <Button to="/staff-augmentation-vs-in-house-hiring" variant="secondary">
+                In-house vs augmentation
+              </Button>
             </div>
           </Card>
         </Section>

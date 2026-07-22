@@ -137,6 +137,18 @@ export function ResourcesPage() {
                 >
                   LATAM vs APAC
                 </Button>
+                <Button
+                  to="/staff-augmentation-vs-in-house-hiring"
+                  variant="secondary"
+                  trackingEvent="cta_click"
+                  trackingPayload={{
+                    location: 'resources_hub',
+                    label: 'staff_augmentation_vs_in_house_hiring',
+                    destination: '/staff-augmentation-vs-in-house-hiring',
+                  }}
+                >
+                  Staff Augmentation vs In-House
+                </Button>
               </div>
             </Card>
           </div>
@@ -156,6 +168,32 @@ export function ResourcesPage() {
                 <p className="mt-2 text-slate-300">{collection.description}</p>
               </Card>
             ))}
+          </div>
+        </Section>
+
+        <Section>
+          <div className="mb-8 max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Comparison pages</p>
+            <h2 className="mt-3 font-display text-4xl font-semibold text-white sm:text-5xl">
+              Decision guides for hiring model tradeoffs.
+            </h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <BlogCard
+              title="LATAM vs APAC for US Teams"
+              excerpt="Compare timezone overlap, communication quality, and delivery speed for US engineering organizations."
+              href="/latam-vs-apac"
+            />
+            <BlogCard
+              title="Staff Augmentation vs In-House Hiring"
+              excerpt="A practical guide to choosing between flexible external capacity and permanent internal headcount."
+              href="/staff-augmentation-vs-in-house-hiring"
+            />
+            <BlogCard
+              title="Hire LATAM Developers"
+              excerpt="A BOFU landing for US companies evaluating faster hiring with senior LATAM talent."
+              href="/hire-latam-developers"
+            />
           </div>
         </Section>
 
