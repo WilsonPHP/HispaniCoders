@@ -6,7 +6,9 @@ import { PageHeader } from '@/components/sections/PageHeader'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
 import { Seo } from '@/components/ui/Seo'
+import { trackBofuVisit } from '@/lib/analytics'
 import { buildBreadcrumbJsonLd, buildFaqJsonLd } from '@/lib/seo'
+import { useEffect } from 'react'
 
 const hiringSignals = [
   'US time-zone overlap for real-time collaboration',
@@ -57,6 +59,10 @@ const landingFaqs = [
 ]
 
 export function HireLatamDevelopersPage() {
+  useEffect(() => {
+    trackBofuVisit('hire_latam_developers')
+  }, [])
+
   return (
     <>
       <Seo
@@ -104,9 +110,28 @@ export function HireLatamDevelopersPage() {
                 shipping.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <Button to="/contact">Request Talent</Button>
-                <Button to="/resources" variant="secondary">
+                <Button
+                  to="/contact"
+                  trackingEvent="cta_click"
+                  trackingPayload={{ location: 'hire_latam_developers', label: 'request_talent', destination: '/contact' }}
+                >
+                  Request Talent
+                </Button>
+                <Button
+                  to="/resources"
+                  variant="secondary"
+                  trackingEvent="cta_click"
+                  trackingPayload={{ location: 'hire_latam_developers', label: 'explore_resources', destination: '/resources' }}
+                >
                   Explore resources
+                </Button>
+                <Button
+                  to="/latam-vs-apac"
+                  variant="secondary"
+                  trackingEvent="cta_click"
+                  trackingPayload={{ location: 'hire_latam_developers', label: 'latam_vs_apac', destination: '/latam-vs-apac' }}
+                >
+                  LATAM vs APAC
                 </Button>
               </div>
             </Card>
@@ -150,8 +175,19 @@ export function HireLatamDevelopersPage() {
               your US team.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button to="/contact">Request Talent</Button>
-              <Button to="/staff-augmentation" variant="secondary">
+              <Button
+                to="/contact"
+                trackingEvent="cta_click"
+                trackingPayload={{ location: 'hire_latam_developers_bottom', label: 'request_talent', destination: '/contact' }}
+              >
+                Request Talent
+              </Button>
+              <Button
+                to="/staff-augmentation"
+                variant="secondary"
+                trackingEvent="cta_click"
+                trackingPayload={{ location: 'hire_latam_developers_bottom', label: 'staff_augmentation_details', destination: '/staff-augmentation' }}
+              >
                 Staff augmentation details
               </Button>
             </div>

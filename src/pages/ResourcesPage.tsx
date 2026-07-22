@@ -106,12 +106,36 @@ export function ResourcesPage() {
                 distributed execution. Then apply one framework at a time and measure outcomes.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <Button to="/contact">Request a Custom Guide</Button>
-                <Button to="/how-it-works" variant="secondary">
+                <Button
+                  to="/contact"
+                  trackingEvent="cta_click"
+                  trackingPayload={{ location: 'resources_hub', label: 'request_custom_guide', destination: '/contact' }}
+                >
+                  Request a Custom Guide
+                </Button>
+                <Button
+                  to="/how-it-works"
+                  variant="secondary"
+                  trackingEvent="cta_click"
+                  trackingPayload={{ location: 'resources_hub', label: 'view_process', destination: '/how-it-works' }}
+                >
                   View Process
                 </Button>
-                <Button to="/hire-latam-developers" variant="secondary">
+                <Button
+                  to="/hire-latam-developers"
+                  variant="secondary"
+                  trackingEvent="cta_click"
+                  trackingPayload={{ location: 'resources_hub', label: 'hire_latam_developers', destination: '/hire-latam-developers' }}
+                >
                   Hire LATAM Developers
+                </Button>
+                <Button
+                  to="/latam-vs-apac"
+                  variant="secondary"
+                  trackingEvent="cta_click"
+                  trackingPayload={{ location: 'resources_hub', label: 'latam_vs_apac', destination: '/latam-vs-apac' }}
+                >
+                  LATAM vs APAC
                 </Button>
               </div>
             </Card>
@@ -174,8 +198,19 @@ export function ResourcesPage() {
               relevant resources and a practical next-step plan.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button to="/contact">Request Talent</Button>
-              <Button to="/contact" variant="secondary">
+              <Button
+                to="/contact"
+                trackingEvent="cta_click"
+                trackingPayload={{ location: 'resources_bottom_cta', label: 'request_talent', destination: '/contact' }}
+              >
+                Request Talent
+              </Button>
+              <Button
+                to="/contact"
+                variant="secondary"
+                trackingEvent="cta_click"
+                trackingPayload={{ location: 'resources_bottom_cta', label: 'contact', destination: '/contact' }}
+              >
                 Contact
               </Button>
             </div>

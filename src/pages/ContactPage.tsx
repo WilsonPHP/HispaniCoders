@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
 import { PageHeader } from '@/components/sections/PageHeader'
 import { Seo } from '@/components/ui/Seo'
+import { trackLeadSubmit } from '@/lib/analytics'
 import { submitContact } from '@/services/api'
 import { useState } from 'react'
 
@@ -87,6 +88,7 @@ export function ContactPage() {
       const response = (await submitContact(values)) as { message?: string }
       setSubmitStatus('success')
       setSubmitMessage(response.message ?? 'Your request was sent successfully.')
+      trackLeadSubmit('contact_form')
       setValues(initialFormState)
       setErrors({})
     } catch (error) {

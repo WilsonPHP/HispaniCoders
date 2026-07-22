@@ -5,6 +5,7 @@ import { HireLatamDevelopersPage } from '@/pages/HireLatamDevelopersPage'
 import { HomePage } from '@/pages/HomePage'
 import { HowItWorksPage } from '@/pages/HowItWorksPage'
 import { IndustriesPage } from '@/pages/IndustriesPage'
+import { LatamVsApacPage } from '@/pages/LatamVsApacPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 import { ResourcePostPage } from '@/pages/ResourcePostPage'
 import { ResourcesPage } from '@/pages/ResourcesPage'
@@ -20,6 +21,7 @@ export default function App() {
         <Route element={<HomePage />} index />
         <Route element={<StaffAugmentationPage />} path="staff-augmentation" />
         <Route element={<HireLatamDevelopersPage />} path="hire-latam-developers" />
+        <Route element={<LatamVsApacPage />} path="latam-vs-apac" />
         <Route element={<TalentPage />} path="talent" />
         <Route element={<IndustriesPage />} path="industries" />
         <Route element={<HowItWorksPage />} path="how-it-works" />

@@ -20,8 +20,19 @@ export function Hero() {
         while your team keeps full control over product direction and technical decisions.
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
-        <Button to="/contact">Request Talent</Button>
-        <Button to="/contact" variant="secondary">
+        <Button
+          to="/contact"
+          trackingEvent="cta_click"
+          trackingPayload={{ location: 'hero', label: 'request_talent', destination: '/contact' }}
+        >
+          Request Talent
+        </Button>
+        <Button
+          to="/contact"
+          variant="secondary"
+          trackingEvent="cta_click"
+          trackingPayload={{ location: 'hero', label: 'schedule_call', destination: '/contact' }}
+        >
           Schedule a Call
         </Button>
       </div>

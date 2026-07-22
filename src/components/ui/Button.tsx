@@ -1,10 +1,13 @@
 import { cn } from '@/utils/cn'
+import { trackEvent } from '@/lib/analytics'
 import { Link } from 'react-router-dom'
-import type { ButtonHTMLAttributes, PropsWithChildren } from 'react'
+import type { ButtonHTMLAttributes, MouseEventHandler, PropsWithChildren } from 'react'
 
 type BaseProps = {
   variant?: 'primary' | 'secondary' | 'ghost'
   className?: string
+  trackingEvent?: string
+  trackingPayload?: Record<string, string | number | boolean | undefined>
 }
 
 type ButtonAsButton = PropsWithChildren<
@@ -17,6 +20,7 @@ type ButtonAsButton = PropsWithChildren<
 type ButtonAsLink = PropsWithChildren<
   BaseProps & {
     to: string
+    onClick?: MouseEventHandler<HTMLAnchorElement>
   }
 >
 
@@ -34,17 +38,35 @@ export function Button(props: ButtonAsButton | ButtonAsLink) {
   const variant = props.variant ?? 'primary'
 
   if ('to' in props && props.to) {
-    const { to, className, children } = props
+    const { to, className, children, onClick, trackingEvent, trackingPayload } = props
+
+    const handleLinkClick: MouseEventHandler<HTMLAnchorElement> = (event) => {
+      if (trackingEvent) {
+        trackEvent(trackingEvent, trackingPayload)
+      }
+
+      onClick?.(event)
+    }
+
     return (
-      <Link className={cn(baseClass, variantClass[variant], className)} to={to}>
+      <Link className={cn(baseClass, variantClass[variant], className)} to={to} onClick={handleLinkClick}>
         {children}
       </Link>
     )
   }
 
-  const { className, children, type = 'button', ...rest } = props as ButtonAsButton
+  const { className, children, type = 'button', trackingEvent, trackingPayload, onClick, ...rest } = props as ButtonAsButton
+
+  const handleButtonClick: MouseEventHandler<HTMLButtonElement> = (event) => {
+    if (trackingEvent) {
+      trackEvent(trackingEvent, trackingPayload)
+    }
+
+    onClick?.(event)
+  }
+
   return (
-    <button className={cn(baseClass, variantClass[variant], className)} type={type} {...rest}>
+    <button className={cn(baseClass, variantClass[variant], className)} type={type} onClick={handleButtonClick} {...rest}>
       {children}
     </button>
   )
