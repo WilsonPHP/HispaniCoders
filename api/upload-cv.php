@@ -79,9 +79,16 @@ if ($cvFile['size'] > 5 * 1024 * 1024) { // 5MB max
 }
 
 // Create uploads directory if it doesn't exist
-$uploadsDir = __DIR__ . '/../storage/cvs';
+$uploadsDir = __DIR__ . '/storage/cvs';
 if (!is_dir($uploadsDir)) {
-    mkdir($uploadsDir, 0755, true);
+    if (!mkdir($uploadsDir, 0777, true)) {
+        http_response_code(500);
+        echo json_encode([
+            'ok' => false,
+            'message' => 'Failed to create uploads directory',
+        ]);
+        exit;
+    }
 }
 
 // Generate unique filename
@@ -100,7 +107,7 @@ if (!move_uploaded_file($cvFile['tmp_name'], $filePath)) {
 }
 
 // Save submission record
-$submissionsFile = __DIR__ . '/../storage/cv_submissions.json';
+$submissionsFile = __DIR__ . '/storage/cv_submissions.json';
 $submissions = [];
 
 if (file_exists($submissionsFile)) {
