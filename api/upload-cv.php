@@ -4,6 +4,16 @@ declare(strict_types=1);
 
 header('Content-Type: application/json; charset=utf-8');
 
+// Error handler to catch fatal errors
+set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+    http_response_code(500);
+    echo json_encode([
+        'ok' => false,
+        'message' => 'Server error: ' . $errstr,
+    ]);
+    exit;
+});
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode([
@@ -58,9 +68,11 @@ if (!isset($_FILES['cv']) || $_FILES['cv']['error'] !== UPLOAD_ERR_OK) {
 }
 
 $cvFile = $_FILES['cv'];
-$allowedMimes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+$fileExt = strtolower(pathinfo($cvFile['name'], PATHINFO_EXTENSION));
+$allowedExtensions = ['pdf', 'doc', 'docx'];
 
-if (!in_array($cvFile['type'], $allowedMimes, true)) {
+// Validate file extension
+if (!in_array($fileExt, $allowedExtensions, true)) {
     http_response_code(400);
     echo json_encode([
         'ok' => false,
@@ -92,7 +104,6 @@ if (!is_dir($uploadsDir)) {
 }
 
 // Generate unique filename
-$fileExt = pathinfo($cvFile['name'], PATHINFO_EXTENSION);
 $fileName = md5($email . time()) . '.' . $fileExt;
 $filePath = $uploadsDir . '/' . $fileName;
 
