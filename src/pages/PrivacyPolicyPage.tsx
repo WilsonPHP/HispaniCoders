@@ -76,8 +76,8 @@ const sections = [
         </ul>
         <p className="mt-3 text-slate-300">
           To exercise any of these rights, contact us at{' '}
-          <a className="text-accent underline-offset-4 hover:underline" href="mailto:hello@hispanicoders.com">
-            hello@hispanicoders.com
+          <a className="text-accent underline-offset-4 hover:underline" href="mailto:contact@hispanicoders.com">
+            contact@hispanicoders.com
           </a>.
         </p>
       </>
@@ -117,8 +117,8 @@ const sections = [
     content: (
       <p className="text-slate-300">
         If you have questions about this Privacy Policy, contact us at{' '}
-        <a className="text-accent underline-offset-4 hover:underline" href="mailto:hello@hispanicoders.com">
-          hello@hispanicoders.com
+        <a className="text-accent underline-offset-4 hover:underline" href="mailto:contact@hispanicoders.com">
+          contact@hispanicoders.com
         </a>
         . <span className="text-white">HispaniCoders LLC</span> — Miami, Florida, USA.
       </p>
