@@ -140,7 +140,7 @@ export function PrivacyPolicyPage() {
           <PageHeader
             eyebrow="Legal"
             title="Privacy Policy"
-            description="Last updated: July 2026"
+            description="How HispaniCoders collects, uses, and protects your information."
           />
         </Section>
 
