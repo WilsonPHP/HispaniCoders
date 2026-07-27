@@ -18,6 +18,15 @@ Options -MultiViews
     RewriteEngine On
     RewriteBase /
 
+    # Return 410 Gone for all WordPress paths (previously indexed, now removed)
+    RewriteRule ^wp-includes/ - [R=410,L]
+    RewriteRule ^wp-content/ - [R=410,L]
+    RewriteRule ^wp-admin/ - [R=410,L]
+    RewriteRule ^wp-login\.php - [R=410,L]
+    RewriteRule ^wp-cron\.php - [R=410,L]
+    RewriteRule ^xmlrpc\.php - [R=410,L]
+    RewriteRule ^wp-json/ - [R=410,L]
+
     RewriteRule ^api/ - [L]
     RewriteRule ^assets/ - [L]
 
