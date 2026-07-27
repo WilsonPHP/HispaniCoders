@@ -9,6 +9,7 @@ export const navigationItems: NavigationItem[] = [
   { label: 'Industries', href: '/industries' },
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Why LATAM', href: '/why-latam' },
+  { label: 'Careers', href: '/careers' },
   { label: 'About', href: '/about' },
   { label: 'Resources', href: '/resources' },
 ]
