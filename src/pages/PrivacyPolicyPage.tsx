@@ -145,7 +145,7 @@ export function PrivacyPolicyPage() {
         </Section>
 
         <Section>
-          <div className="flex flex-col gap-4 max-w-3xl">
+          <div className="flex flex-col gap-4">
             {sections.map((s) => (
               <Card key={s.title}>
                 <h2 className="font-display text-xl font-semibold text-white">{s.title}</h2>
