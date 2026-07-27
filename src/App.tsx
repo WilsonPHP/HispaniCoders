@@ -7,6 +7,7 @@ import { HowItWorksPage } from '@/pages/HowItWorksPage'
 import { IndustriesPage } from '@/pages/IndustriesPage'
 import { LatamVsApacPage } from '@/pages/LatamVsApacPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
+import { PrivacyPolicyPage } from '@/pages/PrivacyPolicyPage'
 import { ResourcePostPage } from '@/pages/ResourcePostPage'
 import { ResourcesPage } from '@/pages/ResourcesPage'
 import { StaffAugmentationPage } from '@/pages/StaffAugmentationPage'
@@ -32,6 +33,7 @@ export default function App() {
         <Route element={<ResourcesPage />} path="resources" />
         <Route element={<ResourcePostPage />} path="resources/:slug" />
         <Route element={<ContactPage />} path="contact" />
+        <Route element={<PrivacyPolicyPage />} path="privacy-policy" />
         <Route element={<NotFoundPage />} path="*" />
       </Route>
     </Routes>

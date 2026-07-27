@@ -26,6 +26,14 @@ Options -MultiViews
     RewriteRule ^wp-cron\.php - [R=410,L]
     RewriteRule ^xmlrpc\.php - [R=410,L]
     RewriteRule ^wp-json/ - [R=410,L]
+    RewriteRule ^locations\.kml - [R=410,L]
+
+    # 301 redirects from old WordPress pages to new equivalents
+    RewriteRule ^outsourcing-development-blog/?$ /resources/ [R=301,L]
+    RewriteRule ^our-outsourcing-development-services/?$ /staff-augmentation/ [R=301,L]
+    RewriteRule ^better-business-with-outsourcing-development/?$ /resources/ [R=301,L]
+    RewriteRule ^hispanicoders-outsourcing-software-development/?$ / [R=301,L]
+    RewriteRule ^outsourcing-software-why-outsource-in-argentina/?$ /why-latam/ [R=301,L]
 
     RewriteRule ^api/ - [L]
     RewriteRule ^assets/ - [L]
