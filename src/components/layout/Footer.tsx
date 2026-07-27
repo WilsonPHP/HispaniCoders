@@ -20,6 +20,9 @@ export function Footer() {
             <Link to="/resources" className="hover:text-white">
               Resources
             </Link>
+            <Link to="/privacy-policy" className="hover:text-white">
+              Privacy Policy
+            </Link>
             <Link to="/about" className="hover:text-white">
               About
             </Link>
