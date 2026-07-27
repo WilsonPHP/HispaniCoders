@@ -22,11 +22,10 @@ export function CareersPage() {
       const formData = new FormData(e.currentTarget)
       const fullName = formData.get('fullName') as string
       const email = formData.get('email') as string
-      const phone = formData.get('phone') as string
       const website = formData.get('website') as string
       const cvFile = formData.get('cv') as File
 
-      if (!fullName || !email || !phone || !cvFile) {
+      if (!fullName || !email || !cvFile) {
         setMessage({ type: 'error', text: 'Please fill in all fields and select a CV file.' })
         setIsLoading(false)
         return
@@ -36,7 +35,6 @@ export function CareersPage() {
         await submitCV({
           fullName,
           email,
-          phone,
           website,
           cv: cvFile,
         })
@@ -139,19 +137,6 @@ export function CareersPage() {
                     placeholder="your@email.com"
                     required
                     type="email"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-[0.1em] text-slate-300">
-                    Phone
-                  </label>
-                  <input
-                    className="mt-2 w-full rounded-lg border border-slate-700 bg-slate-900/50 px-3 py-2 text-white placeholder-slate-500 focus:border-accent focus:outline-none"
-                    name="phone"
-                    placeholder="+1 (555) 000-0000"
-                    required
-                    type="tel"
                   />
                 </div>
 

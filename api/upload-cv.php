@@ -27,9 +27,8 @@ if (!empty($website)) {
 // Validate required fields
 $fullName = trim((string)($_POST['fullName'] ?? ''));
 $email = trim((string)($_POST['email'] ?? ''));
-$phone = trim((string)($_POST['phone'] ?? ''));
 
-if (empty($fullName) || empty($email) || empty($phone)) {
+if (empty($fullName) || empty($email)) {
     http_response_code(400);
     echo json_encode([
         'ok' => false,
@@ -113,7 +112,6 @@ $submissions[] = [
     'timestamp' => date('Y-m-d H:i:s'),
     'fullName' => $fullName,
     'email' => $email,
-    'phone' => $phone,
     'cv_file' => $fileName,
     'ip_address' => $_SERVER['REMOTE_ADDR'] ?? '',
 ];
