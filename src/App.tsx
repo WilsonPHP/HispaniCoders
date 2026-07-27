@@ -1,5 +1,6 @@
 import { MainLayout } from '@/layouts/MainLayout'
 import { AboutPage } from '@/pages/AboutPage'
+import { CareersPage } from '@/pages/CareersPage'
 import { ContactPage } from '@/pages/ContactPage'
 import { HireLatamDevelopersPage } from '@/pages/HireLatamDevelopersPage'
 import { HomePage } from '@/pages/HomePage'
@@ -34,6 +35,7 @@ export default function App() {
         <Route element={<ResourcesPage />} path="resources" />
         <Route element={<ResourcePostPage />} path="resources/:slug" />
         <Route element={<ContactPage />} path="contact" />
+        <Route element={<CareersPage />} path="careers" />
         <Route element={<PrivacyPolicyPage />} path="privacy-policy" />
         <Route element={<TermsOfServicePage />} path="terms-of-service" />
         <Route element={<NotFoundPage />} path="*" />
