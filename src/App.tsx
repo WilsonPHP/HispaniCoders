@@ -8,6 +8,7 @@ import { IndustriesPage } from '@/pages/IndustriesPage'
 import { LatamVsApacPage } from '@/pages/LatamVsApacPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 import { PrivacyPolicyPage } from '@/pages/PrivacyPolicyPage'
+import { TermsOfServicePage } from '@/pages/TermsOfServicePage'
 import { ResourcePostPage } from '@/pages/ResourcePostPage'
 import { ResourcesPage } from '@/pages/ResourcesPage'
 import { StaffAugmentationPage } from '@/pages/StaffAugmentationPage'
@@ -34,6 +35,7 @@ export default function App() {
         <Route element={<ResourcePostPage />} path="resources/:slug" />
         <Route element={<ContactPage />} path="contact" />
         <Route element={<PrivacyPolicyPage />} path="privacy-policy" />
+        <Route element={<TermsOfServicePage />} path="terms-of-service" />
         <Route element={<NotFoundPage />} path="*" />
       </Route>
     </Routes>
