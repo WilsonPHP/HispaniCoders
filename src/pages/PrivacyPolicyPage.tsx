@@ -1,6 +1,7 @@
 import { Container } from '@/components/layout/Container'
 import { Section } from '@/components/layout/Section'
 import { Card } from '@/components/ui/Card'
+import { Link } from 'react-router-dom'
 import { PageHeader } from '@/components/sections/PageHeader'
 import { Seo } from '@/components/ui/Seo'
 
@@ -75,10 +76,10 @@ const sections = [
           <li>Lodge a complaint with a supervisory authority (e.g., your national data protection authority).</li>
         </ul>
         <p className="mt-3 text-slate-300">
-          To exercise any of these rights, contact us at{' '}
-          <a className="text-accent underline-offset-4 hover:underline" href="mailto:contact@hispanicoders.com">
-            contact@hispanicoders.com
-          </a>.
+          To exercise any of these rights,{' '}
+          <Link className="text-accent underline-offset-4 hover:underline" to="/contact">
+            contact us here
+          </Link>.
         </p>
       </>
     ),
@@ -116,10 +117,10 @@ const sections = [
     title: '9. Contact',
     content: (
       <p className="text-slate-300">
-        If you have questions about this Privacy Policy, contact us at{' '}
-        <a className="text-accent underline-offset-4 hover:underline" href="mailto:contact@hispanicoders.com">
-          contact@hispanicoders.com
-        </a>
+        If you have questions about this Privacy Policy,{' '}
+        <Link className="text-accent underline-offset-4 hover:underline" to="/contact">
+          contact us here
+        </Link>
         . <span className="text-white">HispaniCoders LLC</span> — Miami, Florida, USA.
       </p>
     ),
