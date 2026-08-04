@@ -13,38 +13,24 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+$expectedToken = trim((string) (getenv('HISPANICODERS_DELETE_TOKEN') ?: ''));
+$providedToken = trim((string) ($_POST['token'] ?? ''));
+if ($expectedToken !== '' && !hash_equals($expectedToken, $providedToken)) {
+    http_response_code(403);
+    echo json_encode([
+        'ok' => false,
+        'message' => 'Forbidden',
+    ]);
+    exit;
+}
+
 $file = $_POST['file'] ?? '';
 $safeFile = basename((string) $file);
-$ts = trim((string) ($_POST['ts'] ?? ''));
-$sig = trim((string) ($_POST['sig'] ?? ''));
-
-if ($safeFile === '' || $ts === '' || $sig === '' || !ctype_digit($ts)) {
+if ($safeFile === '') {
     http_response_code(400);
     echo json_encode([
         'ok' => false,
-        'message' => 'Invalid request',
-    ]);
-    exit;
-}
-
-$now = time();
-$requestTs = (int) $ts;
-if (abs($now - $requestTs) > 300) {
-    http_response_code(403);
-    echo json_encode([
-        'ok' => false,
-        'message' => 'Expired signature',
-    ]);
-    exit;
-}
-
-$deleteSigningKey = 'hispanicoders-delete-v1';
-$expectedSig = hash_hmac('sha256', $safeFile . '|' . $ts, $deleteSigningKey);
-if (!hash_equals($expectedSig, $sig)) {
-    http_response_code(403);
-    echo json_encode([
-        'ok' => false,
-        'message' => 'Invalid signature',
+        'message' => 'Invalid file',
     ]);
     exit;
 }
