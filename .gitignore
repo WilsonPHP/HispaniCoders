@@ -21,3 +21,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Runtime CV storage (must not be versioned)
+api/storage/*
+!api/storage/.htaccess
+!api/storage/cvs/
+api/storage/cvs/*
+!api/storage/cvs/.gitkeep
