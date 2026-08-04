@@ -36,6 +36,7 @@ if (!empty($website)) {
 
 // Validate required fields
 $fullName = trim((string)($_POST['fullName'] ?? ''));
+$fullName = preg_replace('/\s+/', ' ', $fullName) ?? $fullName;
 $email = trim((string)($_POST['email'] ?? ''));
 
 if (empty($fullName) || empty($email)) {
@@ -43,6 +44,37 @@ if (empty($fullName) || empty($email)) {
     echo json_encode([
         'ok' => false,
         'message' => 'Missing required fields',
+    ]);
+    exit;
+}
+
+// Reject common placeholder/testing names to reduce noisy submissions.
+$blockedNames = [
+    'test',
+    'test online',
+    'testing',
+    'test user',
+    'qa test',
+    'demo',
+    'prueba',
+    'usuario de prueba',
+    'asdf',
+    'qwerty',
+];
+
+$normalizedName = function_exists('mb_strtolower')
+    ? mb_strtolower($fullName, 'UTF-8')
+    : strtolower($fullName);
+
+$nameLength = function_exists('mb_strlen')
+    ? mb_strlen($fullName, 'UTF-8')
+    : strlen($fullName);
+
+if (in_array($normalizedName, $blockedNames, true) || $nameLength < 3) {
+    http_response_code(400);
+    echo json_encode([
+        'ok' => false,
+        'message' => 'Please enter your real full name.',
     ]);
     exit;
 }

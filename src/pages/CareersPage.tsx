@@ -120,6 +120,8 @@ export function CareersPage() {
                   </label>
                   <input
                     className="mt-2 w-full rounded-lg border border-slate-700 bg-slate-900/50 px-3 py-2 text-white placeholder-slate-500 focus:border-accent focus:outline-none"
+                    autoComplete="name"
+                    minLength={3}
                     name="fullName"
                     placeholder="Your full name"
                     required
