@@ -123,7 +123,18 @@ $submissions = [];
 
 if (file_exists($submissionsFile)) {
     $json = file_get_contents($submissionsFile);
-    $submissions = json_decode($json, true) ?: [];
+    if ($json !== false && trim($json) !== '') {
+        $decoded = json_decode($json, true);
+        if ($decoded === null && json_last_error() !== JSON_ERROR_NONE) {
+            http_response_code(500);
+            echo json_encode([
+                'ok' => false,
+                'message' => 'Failed to read submissions storage',
+            ]);
+            exit;
+        }
+        $submissions = is_array($decoded) ? $decoded : [];
+    }
 }
 
 $submissions[] = [
@@ -134,7 +145,20 @@ $submissions[] = [
     'ip_address' => $_SERVER['REMOTE_ADDR'] ?? '',
 ];
 
-file_put_contents($submissionsFile, json_encode($submissions, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+$saved = file_put_contents(
+    $submissionsFile,
+    json_encode($submissions, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE),
+    LOCK_EX
+);
+
+if ($saved === false) {
+    http_response_code(500);
+    echo json_encode([
+        'ok' => false,
+        'message' => 'Failed to persist submission',
+    ]);
+    exit;
+}
 
 echo json_encode([
     'ok' => true,
