@@ -1,0 +1,21 @@
+Options -Indexes
+
+<Files "index.php">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Deny from all
+    </IfModule>
+</Files>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Avoid exposing /api as a browsable endpoint
+    RewriteCond %{REQUEST_URI} ^/api/?$ [NC]
+    RewriteRule ^ - [R=404,L]
+
+    # Block any direct access to storage through the web
+    RewriteRule ^storage(/|$) - [F,L]
+</IfModule>

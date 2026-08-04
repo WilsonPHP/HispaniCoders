@@ -3,7 +3,10 @@ deployment:
   tasks:
     - /bin/mkdir -p $HOME/public_html
     - /bin/mkdir -p $HOME/public_html/api
+    - /bin/mkdir -p $HOME/public_html/api/storage
     - /bin/rm -rf $HOME/public_html/assets
     - /bin/cp -R dist/* $HOME/public_html/
     - /bin/cp -R api/* $HOME/public_html/api/
+    - /bin/cp -f api/.htaccess $HOME/public_html/api/.htaccess
+    - /bin/cp -f api/storage/.htaccess $HOME/public_html/api/storage/.htaccess
     - /bin/cp public/.htaccess $HOME/public_html/.htaccess
