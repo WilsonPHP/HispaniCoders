@@ -15,7 +15,6 @@ if (empty($path)) {
 // Route mapping
 $routes = [
     '/upload-cv.php' => 'upload-cv.php',
-    '/delete-cv.php' => 'delete-cv.php',
     '/contact.php' => 'contact.php',
 ];
 
