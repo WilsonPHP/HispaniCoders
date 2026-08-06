@@ -18,6 +18,13 @@ Options -MultiViews
     RewriteEngine On
     RewriteBase /
 
+    # Return 410 Gone for known phishing/fake-webmail probe paths
+    RewriteRule ^wmaildc/ - [R=410,L,NC]
+    RewriteRule ^public_html/webmail/?$ - [R=410,L,NC]
+    RewriteRule ^webmail/?$ - [R=410,L,NC]
+    RewriteRule ^mail/?$ - [R=410,L,NC]
+    RewriteRule ^cpanel/?$ - [R=410,L,NC]
+
     # Return 410 Gone for all WordPress paths (previously indexed, now removed)
     RewriteRule ^wp-includes/ - [R=410,L]
     RewriteRule ^wp-content/ - [R=410,L]
