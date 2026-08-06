@@ -25,6 +25,12 @@ Options -MultiViews
     RewriteRule ^mail/?$ - [R=410,L,NC]
     RewriteRule ^cpanel/?$ - [R=410,L,NC]
 
+    # Return 410 Gone for internal project folders that must not be public
+    RewriteRule ^src(/|$) - [R=410,L,NC]
+    RewriteRule ^dist(/|$) - [R=410,L,NC]
+    RewriteRule ^public(/|$) - [R=410,L,NC]
+    RewriteRule ^\.git(/|$) - [R=410,L,NC]
+
     # Return 410 Gone for all WordPress paths (previously indexed, now removed)
     RewriteRule ^wp-includes/ - [R=410,L]
     RewriteRule ^wp-content/ - [R=410,L]
