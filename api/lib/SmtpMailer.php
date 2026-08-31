@@ -29,6 +29,10 @@ final class SmtpMailer
         string $replyToEmail = '',
         string $replyToName = ''
     ): void {
+        if ($this->username === '' || $this->password === '') {
+            throw new RuntimeException('Gmail SMTP credentials are not configured');
+        }
+
         $socket = @stream_socket_client(
             sprintf('ssl://%s:%d', $this->host, $this->port),
             $errorCode,
