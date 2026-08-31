@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-$gmailUsername = (string)(getenv('HISPANICODERS_GMAIL_USERNAME') ?: 'contact@hispanicoders.com');
+$gmailUsername = (string)(getenv('HISPANICODERS_GMAIL_USERNAME') ?: 'wilson@hispanicoders.com');
 $gmailAppPassword = (string)(getenv('HISPANICODERS_GMAIL_APP_PASSWORD') ?: '');
 
 return [
@@ -12,6 +12,6 @@ return [
     'password' => $gmailAppPassword,
     'to_email' => 'contact@hispanicoders.com',
     'to_name' => 'HispaniCoders Contact',
-    'from_email' => $gmailUsername,
+    'from_email' => 'contact@hispanicoders.com',
     'from_name' => 'HispaniCoders Website',
 ];
