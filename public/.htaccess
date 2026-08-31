@@ -1,7 +1,7 @@
 Options -MultiViews
 
 <IfModule mod_env.c>
-    SetEnv HISPANICODERS_GMAIL_USERNAME "wilson@hispanicoders.com"
+    SetEnv HISPANICODERS_GMAIL_USERNAME "contact@hispanicoders.com"
     SetEnv HISPANICODERS_GMAIL_APP_PASSWORD "REPLACE_WITH_GOOGLE_APP_PASSWORD"
 </IfModule>
 
