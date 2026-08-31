@@ -28,3 +28,6 @@ api/storage/*
 !api/storage/cvs/
 api/storage/cvs/*
 !api/storage/cvs/.gitkeep
+
+# Production-only mail credentials
+api/smtp_config.local.php

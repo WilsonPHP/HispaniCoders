@@ -2,8 +2,15 @@
 
 declare(strict_types=1);
 
-$gmailUsername = (string)(getenv('HISPANICODERS_GMAIL_USERNAME') ?: 'contact@hispanicoders.com');
-$gmailAppPassword = (string)(getenv('HISPANICODERS_GMAIL_APP_PASSWORD') ?: '');
+$localConfigPath = __DIR__ . '/smtp_config.local.php';
+$localConfig = is_file($localConfigPath) ? require $localConfigPath : [];
+
+if (!is_array($localConfig)) {
+    throw new RuntimeException('Local SMTP configuration must return an array');
+}
+
+$gmailUsername = (string)($localConfig['username'] ?? getenv('HISPANICODERS_GMAIL_USERNAME') ?: 'contact@hispanicoders.com');
+$gmailAppPassword = (string)($localConfig['password'] ?? getenv('HISPANICODERS_GMAIL_APP_PASSWORD') ?: '');
 
 return [
     'host' => 'smtp.gmail.com',
