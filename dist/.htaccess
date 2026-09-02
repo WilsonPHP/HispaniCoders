@@ -47,6 +47,7 @@ Options -MultiViews
     RewriteRule ^better-business-with-outsourcing-development/?$ /resources/ [R=301,L]
     RewriteRule ^hispanicoders-outsourcing-software-development/?$ / [R=301,L]
     RewriteRule ^outsourcing-software-why-outsource-in-argentina/?$ /why-latam/ [R=301,L]
+    RewriteRule ^the-strategic-advantage-of-nearshoring-in-latin-america/?$ /why-latam/ [R=301,L]
 
     RewriteRule ^api/ - [L]
     RewriteRule ^assets/ - [L]
