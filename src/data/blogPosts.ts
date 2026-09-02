@@ -19,7 +19,7 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     slug: 'hire-latam-developers-us-startups',
-    title: 'Hire LATAM Developers for US Startups: Cost, Timeline, and Quality Framework',
+    title: 'Hire LATAM Developers for US Startups',
     excerpt:
       'A decision framework for US startups comparing speed, quality, and cost across LATAM hiring channels.',
     description:
@@ -68,7 +68,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'staff-augmentation-vs-freelance-marketplaces',
-    title: 'Staff Augmentation vs Freelance Marketplaces: What US Engineering Leaders Should Choose',
+    title: 'Staff Augmentation vs Freelance Marketplaces',
     excerpt:
       'A practical comparison of hiring models for US teams that need speed, accountability, and technical consistency.',
     description:
@@ -117,7 +117,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'latam-vs-us-hiring-timeline',
-    title: 'LATAM vs US Hiring Timeline: How Fast Can You Hire Senior Engineers?',
+    title: 'LATAM vs US Hiring Timeline',
     excerpt:
       'A practical comparison of hiring speed, interview bottlenecks, and onboarding risks across US-local and LATAM talent pipelines.',
     description:
@@ -290,11 +290,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'nearshoring-latin-america',
-    title: 'Nearshoring in Latin America: The Complete Guide for US Companies',
+    title: 'Nearshoring in Latin America: A US Company Guide',
     excerpt:
       'Why nearshore outsourcing to Latin America gives US companies faster hiring, tighter collaboration, and lower delivery risk than offshore alternatives.',
     description:
-      'A practical guide to nearshoring in Latin America for US companies: how nearshore outsourcing compares to offshore hiring, why Colombia and other LATAM hubs lead, and how to get started.',
+      'A practical guide to nearshoring in Latin America: how nearshore outsourcing compares to offshore hiring, and why Colombia and other LATAM hubs lead.',
     category: 'Hiring Strategy',
     readTime: '9 min read',
     publishedAt: 'September 2026',
