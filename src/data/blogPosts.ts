@@ -288,6 +288,64 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: 'nearshoring-latin-america',
+    title: 'Nearshoring in Latin America: The Complete Guide for US Companies',
+    excerpt:
+      'Why nearshore outsourcing to Latin America gives US companies faster hiring, tighter collaboration, and lower delivery risk than offshore alternatives.',
+    description:
+      'A practical guide to nearshoring in Latin America for US companies: how nearshore outsourcing compares to offshore hiring, why Colombia and other LATAM hubs lead, and how to get started.',
+    category: 'Hiring Strategy',
+    readTime: '9 min read',
+    publishedAt: 'September 2026',
+    intro:
+      'Nearshoring in Latin America has become the default hiring strategy for US companies that need engineering capacity without the communication gaps and delivery risk that come with offshore outsourcing. This guide breaks down what nearshoring actually means, why Latin America leads as a nearshore region, and how to evaluate a nearshore outsourcing partner.',
+    takeaways: [
+      'Nearshoring means hiring in a nearby, time-zone-aligned region instead of a distant offshore market',
+      'Latin America offers real-time collaboration with US teams, unlike most offshore alternatives',
+      'Colombia, Mexico, and Argentina are leading nearshore outsourcing hubs with deep technical talent pools',
+      'The strongest nearshore outcomes come from curated vetting, not just geographic proximity',
+    ],
+    sections: [
+      {
+        title: 'What nearshoring in Latin America actually means',
+        paragraphs: [
+          'Nearshoring is the practice of outsourcing work to a nearby country rather than a distant one, so teams can collaborate during overlapping business hours. For US companies, Latin America is the natural nearshore region: most countries in the region share several hours of overlap with US time zones, year-round.',
+          'This distinguishes nearshoring from traditional offshore outsourcing to regions like South or Southeast Asia, where a 10-to-13-hour time difference forces async handoffs, delayed feedback loops, and slower iteration on product work.',
+        ],
+      },
+      {
+        title: 'Why nearshore outsourcing beats offshore for US product teams',
+        paragraphs: [
+          'Real-time overlap changes how engineering actually gets done. Standups, pairing sessions, code reviews, and incident response all work better when both sides of the conversation are online at the same time, instead of waiting a full day for a reply.',
+          'Nearshore outsourcing to Latin America also tends to close the cultural and communication gap faster than offshore alternatives: strong English proficiency and deep familiarity with US business norms reduce the ramp-up time most companies budget for distributed hiring.',
+          'Cost savings versus US-based hiring remain significant with a nearshore model, but the primary driver for most engineering leaders is delivery speed and lower coordination overhead, not price alone.',
+        ],
+      },
+      {
+        title: 'Colombia and other leading nearshore hubs in Latin America',
+        paragraphs: [
+          'Colombia has become one of the most active nearshore outsourcing hubs in Latin America, with a fast-growing pool of backend, frontend, and DevOps engineers, strong government investment in tech education, and time zones that align closely with US Eastern and Central hours.',
+          'Mexico offers similar time-zone advantages for companies on the US West Coast, while Argentina and other Southern Cone countries bring deep senior engineering talent with slightly wider, but still workable, time-zone overlap.',
+          'Rather than committing to a single country, most US companies benefit from evaluating nearshore talent across several Latin American markets and prioritizing role fit, seniority, and communication quality over any one country label.',
+        ],
+      },
+      {
+        title: 'How to evaluate a nearshore outsourcing partner',
+        paragraphs: [
+          'Proximity alone does not guarantee quality. A strong nearshore outsourcing partner curates candidates against real role requirements, validates technical depth with practical exercises, and confirms English communication in live scenarios rather than scripted interviews.',
+          'Ask how a partner handles onboarding, contracts, and payments across countries — the operational layer is often what determines whether a nearshore engagement scales smoothly past the first hire.',
+        ],
+      },
+      {
+        title: 'Getting started with nearshore talent in Latin America',
+        paragraphs: [
+          'Start with one clearly scoped role to validate collaboration fit before scaling. Define the outcomes you need in the first 90 days, confirm time-zone overlap with your core team, and set a short feedback loop for the first few weeks of onboarding.',
+          'Once the model proves out, most teams expand nearshore hiring across additional roles and countries, using the same evaluation framework to keep quality consistent as headcount grows.',
+        ],
+      },
+    ],
+  },
 ]
 
 export function getBlogPostBySlug(slug: string) {

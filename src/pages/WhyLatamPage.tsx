@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
 import { Seo } from '@/components/ui/Seo'
 import { buildBreadcrumbJsonLd, buildFaqJsonLd } from '@/lib/seo'
+import { Link } from 'react-router-dom'
 
 const latamAdvantages = [
   'Meaningful overlap with US working hours for daily collaboration',
@@ -120,7 +121,7 @@ export function WhyLatamPage() {
           <PageHeader
             eyebrow="Why LATAM"
             title="Top technical capability with strong US collaboration overlap."
-            description="LATAM talent helps US engineering teams scale with strong English communication, cultural compatibility, first-class academic preparation, and high technical standards."
+            description="Nearshoring to LATAM helps US engineering teams scale with strong English communication, cultural compatibility, first-class academic preparation, and high technical standards."
           />
         </Section>
 
@@ -183,6 +184,25 @@ export function WhyLatamPage() {
             </h2>
           </div>
           <Checklist items={fitSignals} />
+        </Section>
+
+        <Section>
+          <Card>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Deep dive</p>
+            <h2 className="mt-3 font-display text-3xl font-semibold text-white">
+              Want the full picture on nearshoring in Latin America?
+            </h2>
+            <p className="mt-3 max-w-2xl text-slate-300">
+              Read our complete guide to nearshore outsourcing across Colombia, Mexico, Argentina,
+              and other leading LATAM hubs, including how to evaluate a nearshore partner.
+            </p>
+            <Link
+              className="mt-4 inline-block text-sm font-semibold text-accent transition hover:text-amber-200"
+              to="/resources/nearshoring-latin-america"
+            >
+              Read the nearshoring guide
+            </Link>
+          </Card>
         </Section>
 
         <Section>
