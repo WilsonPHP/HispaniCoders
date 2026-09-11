@@ -190,17 +190,17 @@ export function WhyLatamPage() {
           <Card>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Deep dive</p>
             <h2 className="mt-3 font-display text-3xl font-semibold text-white">
-              Want the full picture on nearshoring in Latin America?
+              Ready to hire nearshore developers in Latin America?
             </h2>
             <p className="mt-3 max-w-2xl text-slate-300">
-              Read our complete guide to nearshore outsourcing across Colombia, Mexico, Argentina,
-              and other leading LATAM hubs, including how to evaluate a nearshore partner.
+              Read our complete guide to hiring nearshore developers across Colombia, Mexico,
+              Argentina, and other leading LATAM hubs, including how to choose a staffing agency.
             </p>
             <Link
               className="mt-4 inline-block text-sm font-semibold text-accent transition hover:text-amber-200"
-              to="/resources/nearshoring-latin-america"
+              to="/resources/hire-nearshore-developers-latin-america"
             >
-              Read the nearshoring guide
+              Read the nearshore hiring guide
             </Link>
           </Card>
         </Section>
